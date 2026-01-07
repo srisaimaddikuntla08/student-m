@@ -32,3 +32,12 @@ export const createStudent = async (req:Request,res:Response)=>{
 
     }
 }
+
+
+
+export const getAllStudents = async (req:Request,res:Response)=>{
+
+  
+    
+}
+
