@@ -1,4 +1,5 @@
 
+
 export class StudentResponse {
     name: string
     email:string
