@@ -1,29 +1,24 @@
 import { prisma } from "../db";
-import { Student } from "../dto/Student";
+
 import  type {Request,Response} from "express";
+import { tostudentResponse } from "../mappers/studentMapper";
 
 export const createStudent = async (req:Request,res:Response)=>{
 
     const {name,email,role} = req.body;
 
-
-    //student dto to !show model data and to pasrse only dto's data
-    const student = new Student(
-        name,
-        email,
-        role
-    );
-
     try{
             const data = await prisma.user.create({
                 data:{
-                    name:student.name,
-                    email:student.email,
-                    role:student.role
+                    name,
+                    email,
+                    role
                 }
             })
 
-            return res.status(201).json({success:true,data})
+            const response = tostudentResponse(data);
+            return res.status(201).json({success:true,response:response})
+            
     }catch(error:any){
 
         console.error(error)
@@ -33,11 +28,4 @@ export const createStudent = async (req:Request,res:Response)=>{
     }
 }
 
-
-
-export const getAllStudents = async (req:Request,res:Response)=>{
-
-  
-    
-}
 
