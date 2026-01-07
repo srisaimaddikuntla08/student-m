@@ -1,8 +1,8 @@
-export class Student {
+
+export class StudentResponse {
     name: string
     email:string
     role: "STUDENT" | "TEACHER"
-
 
     constructor(name:string,email:string,role:"STUDENT" | "TEACHER"){
         this.name = name;
@@ -10,3 +10,4 @@ export class Student {
         this.role = role
     }
 }
+
