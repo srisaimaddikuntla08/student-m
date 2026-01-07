@@ -8,7 +8,7 @@ export const createStudent = async (req:Request,res:Response)=>{
     const {name,email,role} = req.body;
 
     try{
-            const data = await prisma.user.create({
+            const data = await prisma.student.create({
                 data:{
                     name,
                     email,

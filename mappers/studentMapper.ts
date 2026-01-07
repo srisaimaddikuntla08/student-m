@@ -1,12 +1,12 @@
-import type { User } from "../generated/prisma/client";
+import type { Student } from "../generated/prisma/client";
 
 import { StudentResponse } from "../dto/Student";
 
 
-export const tostudentResponse  = (user:User)=>{
+export const tostudentResponse  = (student:Student)=>{
     return new StudentResponse(
-        user.name,
-        user.email,
-        user.role
+        student.name,
+        student.email,
+        student.role
     )
 }
