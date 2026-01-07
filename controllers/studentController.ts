@@ -6,7 +6,7 @@ import { tostudentResponse } from "../mappers/studentMapper";
 export const createStudent = async (req:Request,res:Response)=>{
 
     const {name,email,role} = req.body;
-    
+
     try{
             const data = await prisma.user.create({
                 data:{
@@ -28,11 +28,4 @@ export const createStudent = async (req:Request,res:Response)=>{
     }
 }
 
-
-
-export const getAllStudents = async (req:Request,res:Response)=>{
-
-  
-
-}
 
