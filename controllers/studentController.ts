@@ -7,7 +7,7 @@ export const createStudent = async (req:Request,res:Response)=>{
     const {name,email,role} = req.body;
 
 
-    //student dto to !show model data
+    //student dto to !show model data and to pasrse only dto's data
     const student = new Student(
         name,
         email,
