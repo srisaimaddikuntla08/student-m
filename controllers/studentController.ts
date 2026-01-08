@@ -29,3 +29,19 @@ export const createStudent = async (req:Request,res:Response)=>{
 }
 
 
+export const getAllStudents = async (req:Request,res:Response)=>{
+    try{
+            const students = await prisma.student.findMany({})
+            
+            const response = students.map(tostudentResponse)
+            return res.json({success:true, data:response})
+            
+    }catch(error:any){
+
+        console.error(error)
+
+        return  res.json({message:error.message})
+
+    }
+}
+
