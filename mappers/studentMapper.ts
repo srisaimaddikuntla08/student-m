@@ -5,6 +5,7 @@ import { StudentResponse } from "../dto/Student";
 
 export const tostudentResponse  = (student:Student)=>{
     return new StudentResponse(
+        student.id,
         student.name,
         student.email,
         student.role

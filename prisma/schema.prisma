@@ -19,6 +19,9 @@ model Student {
   name  String
   email String  @unique
   role  Role   @default(STUDENT)
+
+  teacherId  Int?
+  teacher Teacher ? @relation(fields: [teacherId],references: [id])
 }
 
 enum Role {
@@ -26,6 +29,14 @@ enum Role {
   TEACHER
 }
 
+model Teacher{
+  id Int  @id @default(autoincrement())
+  email String
+
+  studentId  Int  @unique
+
+  student Student[]
+}
 
 
 
