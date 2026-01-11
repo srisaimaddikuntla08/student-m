@@ -33,8 +33,6 @@ model Teacher{
   id Int  @id @default(autoincrement())
   email String
 
-  studentId  Int  @unique
-
   student Student[]
 }
 
